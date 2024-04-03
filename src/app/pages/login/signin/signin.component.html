@@ -1,0 +1,14 @@
+<!-- <div class="h-screen flex items-center justify-center bg-zinc-800">
+  <div class="">
+<img
+  src="https://cptstatic.s3.amazonaws.com/imagens/blogs/portal-agropecuario/materias/2011/10/portal-agropecuario-novilho-precoce-250x187.jpg"
+  alt="boi" width="320px"> -->
+<form [formGroup]="loginForm" (ngSubmit)="login()" class="bg-lime-700 w-80 rounded-lg">
+  <label class="flex justify-center items-center">Email</label>
+  <input type="email" formControlName="email" class="flex w-80">
+  <label class="flex justify-center items-center">Password</label>
+  <input type="password" formControlName="password" class="flex w-80">
+  <button type="submit" (click)="login()" class="flex justify-center items-center">Entrar...</button>
+</form>
+<!-- </div>
+</div> -->

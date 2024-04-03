@@ -1,0 +1,19 @@
+<div class="h-screen flex items-center justify-center bg-blue-200">
+  <div class="">
+    <img
+      src="https://cptstatic.s3.amazonaws.com/imagens/blogs/portal-agropecuario/materias/2011/10/portal-agropecuario-novilho-precoce-250x187.jpg"
+      alt="boi" width="320px">
+    <mat-tab-group class="">
+
+      <mat-tab *ngFor="let item of menus; index as index" class="text-gray-600" label="{{item}}">
+        <div *ngIf="index===0">
+          <boi-signin></boi-signin>
+        </div>
+        <div *ngIf="index===1">
+          <boi-register></boi-register>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+
+  </div>
+</div>
