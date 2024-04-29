@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UserContextService } from '../../helpers/services/user-context.service';
-import { map, Observable, of, tap } from 'rxjs';
+import { Observable } from 'rxjs';
 import { AppService } from '../../helpers/services/service';
 
 @Injectable({
@@ -16,12 +16,12 @@ export class LoginService extends AppService {
   }
 
   signin(body: any): Observable<any> {
-    const url = `${this.getServerAPI()}+/signin`;
+    const url = `${this.getServerAPI()}/local/signin`;
     return this._http.post(url, body, this.getHttpHeaderOptions());
   }
 
   signup(body: any): Observable<any> {
-    const url = `${this.getServerAPI()}+/local/signup`;
+    const url = `${this.getServerAPI()}/local/signup`;
     return this._http.post(url, body, this.getHttpHeaderOptions());
   }
 }
