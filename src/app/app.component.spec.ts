@@ -1,10 +1,21 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginModule } from './pages/login/login.module';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
+      declarations: [AppComponent],
+      imports: [
+        HttpClientModule,
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        LoginModule,
+      ],
     }).compileComponents();
   });
 
@@ -24,6 +35,8 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, boi-alarm-frontend');
+    expect(compiled.querySelector('h1')?.textContent).toContain(
+      'Hello, boi-alarm-frontend'
+    );
   });
 });
