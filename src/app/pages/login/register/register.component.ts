@@ -31,9 +31,9 @@ export class RegisterComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    if (this._userContextService.getToken() !== null) {
-      this._router.navigate(['dashboard']);
-    }
+    // if (this._userContextService.getToken() !== null) {
+    this._router.navigate(['dashboard']);
+    // }
     this.initForm();
   }
 

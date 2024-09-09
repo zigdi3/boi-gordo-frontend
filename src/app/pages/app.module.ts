@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from '../app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -9,9 +9,11 @@ import { RouterModule } from '@angular/router';
 import { routes } from '../app.routes';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MonthFullComponent } from './dashboard/month-full/month-full.component';
+import { CellComponent } from './dashboard/cell/cell.component';
 
 @NgModule({
-  declarations: [AppComponent, DashboardComponent],
+  declarations: [AppComponent, MonthFullComponent, CellComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -24,6 +26,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   bootstrap: [AppComponent],
   exports: [],
-  providers: [],
+  providers: [DatePipe],
 })
 export class AppModule {}

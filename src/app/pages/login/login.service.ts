@@ -4,9 +4,7 @@ import { UserContextService } from '../../helpers/services/user-context.service'
 import { Observable } from 'rxjs';
 import { AppService } from '../../helpers/services/service';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class LoginService extends AppService {
   constructor(
     public _http: HttpClient,
@@ -16,7 +14,7 @@ export class LoginService extends AppService {
   }
 
   signin(body: any): Observable<any> {
-    const url = `${this.getServerAPI()}/local/signin`;
+    const url = `${this.getServerAPI()}/login`;
     return this._http.post(url, body, this.getHttpHeaderOptions());
   }
 
