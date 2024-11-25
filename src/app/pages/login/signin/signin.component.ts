@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import * as CryptoJs from 'crypto-js';
 import { UserContextService } from '../../../helpers/services/user-context.service';
 import { LoginService } from '../login.service';
 
@@ -17,11 +16,12 @@ export class SigninComponent implements OnInit {
     password: new FormControl(''),
   });
 
+  private readonly _router = inject(Router);
+
   constructor(
     private _fb: FormBuilder,
     private _userContextService: UserContextService,
-    private _loginService: LoginService,
-    private _router: Router
+    private _loginService: LoginService
   ) {}
 
   ngOnInit() {
