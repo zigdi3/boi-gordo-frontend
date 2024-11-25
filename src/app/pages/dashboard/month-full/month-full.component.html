@@ -1,0 +1,25 @@
+<div class="calendario-titulo">
+  <div>
+    <button (click)="alterarMes(-1)">ant.</button>
+  </div>
+  <div class="calendario-titulo-mes-ano">
+    {{dataAtual | date : 'MMM yyyy'}}
+  </div>
+  <div>
+    <button (click)="alterarMes(+1)">prox.</button>
+  </div>
+</div>
+<div class="calendario-cabecalho">
+  {{dataAtual | date: 'MMMM'}}</div>
+<div class="calendario-dias">
+  <!-- Aqui renderizamos o nome do dia da semana -->
+  <ng-container *ngFor="let dia of diasCalendario; let i = index">
+    <div *ngIf="i < 7">
+      <strong>{{ dia | date: 'cccc' }}</strong>
+    </div>
+  </ng-container>
+  <div *ngFor="let dia of diasCalendario; let i = index">
+    <boi-cell [day]="dia.getUTCDate()" />
+
+  </div>
+</div>

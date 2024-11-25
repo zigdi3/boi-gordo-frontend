@@ -27,6 +27,9 @@
             "styles": [
               "src/styles.css"
             ],
+            "allowedCommonJsDependencies": [
+              "crypto-js"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -34,8 +37,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2000kb",
+                  "maximumError": "4mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -47,8 +50,10 @@
             },
             "development": {
               "optimization": false,
+              "namedChunks": true,
               "extractLicenses": false,
               "sourceMap": true,
+              "crossOrigin": "anonymous",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -62,8 +67,10 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
+
             "production": {
               "buildTarget": "boi-alarm-frontend:build:production"
+
             },
             "development": {
               "buildTarget": "boi-alarm-frontend:build:development"
@@ -99,6 +106,9 @@
     }
   },
   "cli": {
+    "cache": {
+      "enabled": true
+    },
     "analytics": false
   }
 }
